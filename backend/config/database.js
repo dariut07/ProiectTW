@@ -1,14 +1,10 @@
-//MOMENTAN ESTE DOAR SCHEMA CODULUI 
-//NU AM IMPLEMENTAT NICUN BD
-const { Sequelize } = require('sequelize');
+import { Sequelize } from "sequelize";
 
-const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASS, {
-  host: process.env.DB_HOST,
+const sequelize = new Sequelize(
+  "databasetw", "daria00", "tehnologiiweb", {
+  host: "databasetw.crcy4sg8gj54.eu-north-1.rds.amazonaws.com",
   dialect: 'mysql',
 });
 
-sequelize.authenticate()
-  .then(() => console.log('Conexiune reușită la baza de date!'))
-  .catch((err) => console.error('Eroare la conectare:', err));
 
 module.exports = sequelize;
